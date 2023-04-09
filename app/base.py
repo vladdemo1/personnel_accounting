@@ -1,5 +1,5 @@
 """
-This module contains main logic this program
+This module contains main logic for this program
 """
 
 def main() -> None:

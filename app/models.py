@@ -1,14 +1,13 @@
 """
-This module contains all models for program
+This module contains all models for the program
 """
-
 
 from random import randint
 
 
 class Unit:
     """
-    Base model for worker and Manager
+    Base model for Worker and Manager
     """
 
     def __init__(self, first_name: str, middle_name: str, last_name: str,
@@ -17,18 +16,16 @@ class Unit:
         self._middle_name = middle_name
         self._last_name = last_name
         self._login = login
-        self._password = password
+        self._password = password  # TODO create password hashing
         self._personnel_number = self._check_number(number=personnel_number)
         self._payroll_number = self._check_number(number=payroll_number)
-
 
     @staticmethod
     def _check_number(number: int) -> int:
         """
-        Check number in corrent size
+        Check if number has correct size
         """
         return number if 1_000_000 > number > 0 else randint(1, 1_000_000)
-
 
     @property
     def full_name(self) -> dict:
@@ -39,14 +36,12 @@ class Unit:
             "last_name": self._last_name,
         }
 
-
     @property
     def login(self) -> str:
         """
         Get personal login
         """
         return self._login
-    
 
     @property
     def personnel_number(self) -> int:
@@ -54,7 +49,6 @@ class Unit:
         Get personal number
         """
         return self._personnel_number
-
 
     @property
     def payroll_number(self) -> int:
@@ -68,22 +62,20 @@ class Worker(Unit):
     """
     Worker - base unit
     """
-    
+
     @staticmethod
     def came_to_the_office() -> None:
         """
-        This func regirter then unit came to office
+        This func register when unit came to office
         """
         pass
-
 
     @staticmethod
-    def install_what_did() -> None:
+    def register_activity() -> None:
         """
-        This func register what did employee in current work
+        This func register current employee activity
         """
         pass
-
 
     @staticmethod
     def left_the_office() -> None:
@@ -92,25 +84,22 @@ class Worker(Unit):
         """
         pass
 
-
     @staticmethod
-    def show_my_work_hours() -> None:
+    def get_work_hours() -> None:
         """
         This func return current count hours at work in office
         """
         pass
 
-
     @staticmethod
-    def show_my_work_time() -> None:
+    def get_work_time() -> None:
         """
         This func return how long and when the employee worked
         """
         pass
 
-
     @staticmethod
-    def show_my_current_salary() -> None:
+    def get_salary() -> None:
         """
         This func return current salary of this unit
         """
@@ -129,7 +118,6 @@ class Manager(Unit):
         """
         pass
 
-
     @staticmethod
     def set_premium_for_worker(personnel_number: int) -> None:
         """
@@ -137,7 +125,6 @@ class Manager(Unit):
         """
         pass
 
-    
     @staticmethod
     def set_new_worker() -> None:
         """
@@ -145,14 +132,12 @@ class Manager(Unit):
         """
         pass
 
-
     @staticmethod
-    def fire_an_worker() -> None:
+    def fire_worker() -> None:
         """
         This func can throw out of the window of the office -> worker
         """
         pass
-
 
     @staticmethod
     def set_new_index_salary(new_salary_index: float) -> None:
