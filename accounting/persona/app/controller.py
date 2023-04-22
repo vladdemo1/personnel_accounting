@@ -2,7 +2,8 @@
 This module contains controller
 """
 
-from models import Worker, Manager, Unit
+from worker import Worker
+from manager import Manager
 
 
 # "First_Name", "Middle_Name", "Last_Name", "Login", "Password", 1, 100
